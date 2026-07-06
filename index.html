@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>The Zero Employee Company — A Business Run Entirely by AI</title>
+  <meta name="description" content="Follow the build of The Zero Employee Company: a real business operated end-to-end by AI agents, with zero employees. The experiment, the tools, and the lessons — documented in public.">
+  <link rel="canonical" href="https://thezeroemployeecompany.com/">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Giovanni Brees">
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thezeroemployeecompany.com/">
+  <meta property="og:title" content="The Zero Employee Company — A Business Run Entirely by AI">
+  <meta property="og:description" content="A real business operated end-to-end by AI agents, with zero employees. Documented in public.">
+  <meta property="og:site_name" content="The Zero Employee Company">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Zero Employee Company — A Business Run Entirely by AI">
+  <meta name="twitter:description" content="A real business operated end-to-end by AI agents, with zero employees. Documented in public.">
+
+  <!-- Structured data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Zero Employee Company",
+    "url": "https://thezeroemployeecompany.com/",
+    "description": "A real business operated end-to-end by AI agents, with zero employees.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Giovanni Brees"
+    }
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --surface: #12151d;
+      --border: #232836;
+      --text: #e8eaf0;
+      --muted: #9aa3b5;
+      --accent: #5eead4;
+      --accent-dim: rgba(94, 234, 212, 0.12);
+      --max: 68rem;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11, 13, 18, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .logo { font-weight: 700; letter-spacing: -0.02em; color: var(--text); font-size: 1.05rem; }
+    .logo span { color: var(--accent); }
+    nav ul { display: flex; gap: 1.75rem; list-style: none; }
+    nav ul a { color: var(--muted); font-size: 0.95rem; }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+
+    .hero { padding: 7rem 0 6rem; text-align: center; }
+    .badge {
+      display: inline-block; padding: 0.35rem 0.9rem; border-radius: 999px;
+      background: var(--accent-dim); color: var(--accent);
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem;
+      border: 1px solid rgba(94, 234, 212, 0.25);
+    }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.1; letter-spacing: -0.03em; font-weight: 800;
+      max-width: 46rem; margin: 0 auto 1.25rem;
+    }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero p {
+      color: var(--muted); font-size: 1.2rem; max-width: 38rem; margin: 0 auto 2.5rem;
+    }
+    .cta {
+      display: inline-block; padding: 0.85rem 2rem; border-radius: 0.6rem;
+      background: var(--accent); color: #06281f; font-weight: 700;
+    }
+    .cta:hover { text-decoration: none; filter: brightness(1.1); }
+    .cta.ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border); margin-left: 0.75rem;
+    }
+
+    section { padding: 5rem 0; border-top: 1px solid var(--border); }
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .lede { color: var(--muted); max-width: 42rem; margin-bottom: 3rem; font-size: 1.05rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 0.9rem; padding: 1.75rem;
+    }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .card .num {
+      color: var(--accent); font-weight: 800; font-size: 0.85rem;
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;
+    }
+    .card p { color: var(--muted); font-size: 0.97rem; }
+
+    .about { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 42rem; }
+    .about p { color: var(--muted); margin-bottom: 1rem; }
+    .about strong { color: var(--text); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0; text-align: center; color: var(--muted); font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      .hero { padding: 4.5rem 0 4rem; }
+      .cta.ghost { margin-left: 0; margin-top: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main navigation">
+      <a class="logo" href="/">The <span>Zero Employee</span> Company</a>
+      <ul>
+        <li><a href="#idea">The Idea</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="hero" style="border-top:none">
+      <span class="badge">An experiment in public</span>
+      <h1>What if a company had <em>zero employees</em> — and still ran itself?</h1>
+      <p>
+        The Zero Employee Company is a real business operated end-to-end by AI agents.
+        No staff. No freelancers. Just software doing the work — and one human documenting
+        everything that happens along the way.
+      </p>
+      <a class="cta" href="#idea">Explore the experiment</a>
+      <a class="cta ghost" href="#contact">Get in touch</a>
+    </section>
+
+    <section id="idea">
+      <h2>The Idea</h2>
+      <p class="lede">
+        AI can now write, sell, support, analyze, and decide. So here's the question this
+        project exists to answer: can an entire company — product, marketing, operations,
+        customer service — run without a single employee?
+      </p>
+      <div class="grid">
+        <article class="card">
+          <span class="num">Principle 01</span>
+          <h3>Radically lean</h3>
+          <p>No payroll, no office, no meetings. Every function of the business is handled by an AI agent or an automation — or it doesn't happen.</p>
+        </article>
+        <article class="card">
+          <span class="num">Principle 02</span>
+          <h3>Built in public</h3>
+          <p>Every experiment, tool choice, cost, failure, and win gets documented here. The transparency is the point.</p>
+        </article>
+        <article class="card">
+          <span class="num">Principle 03</span>
+          <h3>Human on the loop</h3>
+          <p>One founder sets direction and reviews outcomes. The AI does the work. The interesting part is finding where that line actually sits.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>How It Works</h2>
+      <p class="lede">
+        The company is a stack of AI agents wired together, each owning a job a
+        person would normally do.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <span class="num">Ops</span>
+          <h3>Operations agents</h3>
+          <p>Handle scheduling, invoicing, reporting, and the day-to-day admin that usually eats a founder's week.</p>
+        </article>
+        <article class="card">
+          <span class="num">Growth</span>
+          <h3>Marketing agents</h3>
+          <p>Write content, run campaigns, and analyze what's working — then adjust without being asked.</p>
+        </article>
+        <article class="card">
+          <span class="num">Support</span>
+          <h3>Customer agents</h3>
+          <p>Answer questions, resolve issues, and escalate to the human only when something genuinely needs judgment.</p>
+        </article>
+        <article class="card">
+          <span class="num">Build</span>
+          <h3>Product agents</h3>
+          <p>Ship and maintain the product itself — including this website, which was built and deployed by an AI agent.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="about">
+        <p>
+          <strong>The Zero Employee Company is run by Giovanni Brees</strong> — or more
+          accurately, it's run by AI, and Giovanni watches, steers, and writes about it.
+        </p>
+        <p>
+          This project isn't a prediction that jobs will disappear. It's a live experiment
+          to find out what's actually possible today, what breaks, what still needs a human,
+          and what a one-person company can realistically achieve with the current generation
+          of AI tools.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="about">
+        <p>
+          Questions, ideas, or want to follow along?
+          Reach out at <a href="mailto:giovanni@giovannibrees.com">giovanni@giovannibrees.com</a>.
+        </p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 The Zero Employee Company · Built and deployed by an AI agent.</p>
+  </div>
+</footer>
+
+</body>
+</html>
