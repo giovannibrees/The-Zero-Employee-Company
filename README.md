@@ -1,36 +1,43 @@
-# The Zero Employee Company
+# The Zero-Employee Company - Book Website
 
-Website for The Zero Employee Company — a business run entirely by AI agents.
+One-page marketing site for the book **The Zero-Employee Company** by Giovanni Brees, optimized for search and AI-assistant ranking.
 
-This is a plain static site (no build step, no framework): fast, free to host, and ideal for SEO.
+Static site, zero build step: one HTML file, one author photo, one social share image. Deploys to Cloudflare Pages as-is.
 
 ## Files
 
 | File | Purpose |
 |---|---|
-| `index.html` | The website (all styles inlined for speed) |
-| `404.html` | Not-found page (Cloudflare Pages serves this automatically) |
-| `robots.txt` | Tells search engines they may index everything |
-| `sitemap.xml` | Helps Google discover pages |
-| `_headers` | Security headers applied by Cloudflare Pages |
+| `index.html` | The complete site (styles inlined, JSON-LD structured data for Book, Person, and FAQPage) |
+| `assets/author.png` | Author photo |
+| `assets/og-cover.jpg` | 1200x630 social share image |
+| `404.html` | Not-found page (served automatically by Cloudflare Pages) |
+| `robots.txt`, `sitemap.xml` | Search engine indexing |
+| `_headers` | Security and cache headers (read natively by Cloudflare Pages) |
 
-## Deploying to Cloudflare Pages
+## Deploy to Cloudflare Pages (Git integration)
 
-1. Log in at [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
-2. Authorize GitHub and select this repository.
-3. Build settings:
-   - **Framework preset:** None
-   - **Build command:** *(leave empty)*
-   - **Build output directory:** `/`
-4. Deploy. The site goes live on a `*.pages.dev` URL, and every push to the production branch redeploys automatically.
-5. To use a custom domain: Pages project → **Custom domains** → add your domain.
+1. [dash.cloudflare.com](https://dash.cloudflare.com) -> Workers & Pages -> Create -> Pages -> Connect to Git.
+2. Authorize GitHub and pick this repository.
+3. Framework preset: **None**. Build command: (empty). Build output directory: `/`.
+4. Deploy. Every push to the production branch redeploys automatically.
 
-## After connecting a custom domain
+## When you add a custom domain
 
-Replace `https://thezeroemployeecompany.com` with your real domain in:
+The site currently uses `https://the-zero-employee-company.pages.dev` as its canonical URL. After adding a custom domain in the Pages project (Custom domains tab), replace that URL in:
 
-- `index.html` (the `<link rel="canonical">` and `og:url` tags, and the JSON-LD block)
-- `robots.txt` (the `Sitemap:` line)
-- `sitemap.xml` (the `<loc>` entry)
+- `index.html` (canonical link, `og:url`, `og:image`)
+- `robots.txt` (Sitemap line)
+- `sitemap.xml` (loc entry)
 
-Then submit the sitemap in [Google Search Console](https://search.google.com/search-console).
+## After deploy
+
+- Validate structured data with Google's Rich Results Test (Book + Person + FAQPage).
+- Submit the sitemap in Google Search Console and Bing Webmaster Tools (Bing feeds many AI assistants).
+- Check the social card with a preview tool such as opengraph.xyz.
+
+## Copy rules (binding)
+
+- Never use em-dashes. Use "-".
+- Never mention the author's location.
+- Never say the author "sold" his operation - say "exited".

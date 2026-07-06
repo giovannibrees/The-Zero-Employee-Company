@@ -1,264 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Zero-Employee Company by Giovanni Brees - Build a One-Person Business with AI Agents</title>
+<meta name="description" content="The Zero-Employee Company by Giovanni Brees: how founders build and scale one-person businesses with AI agents, automation, workflows and agent memory - without hiring employees.">
+<meta name="keywords" content="Giovanni Brees, The Zero-Employee Company, AI agents, one-person business, solopreneur AI, AI automation, agentic workflows, zero employee startup, AI agent orchestration, agent memory, solo founder, build a business with AI">
+<meta name="author" content="Giovanni Brees">
+<link rel="canonical" href="https://the-zero-employee-company.pages.dev/">
+<meta property="og:type" content="book">
+<meta property="og:title" content="The Zero-Employee Company - Giovanni Brees">
+<meta property="og:description" content="What if scaling never meant another hire? The operating model for one-person companies built on AI agents.">
+<meta property="og:url" content="https://the-zero-employee-company.pages.dev/">
+<meta property="og:image" content="https://the-zero-employee-company.pages.dev/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Book","name":"The Zero-Employee Company","alternateName":"The Zero-Employee Company: What if scaling never meant another hire?","author":{"@id":"#giovanni"},"bookFormat":"https://schema.org/EBook","inLanguage":"en","genre":["Business","Technology","Artificial Intelligence","Entrepreneurship"],"about":["AI agents","one-person business","AI automation","agent orchestration","solopreneurship","agentic workflows"],"description":"A practical operating model for building and scaling a company with zero employees: AI agents as roles, the delegation ladder, agent memory, orchestration, and the judgment work that stays human. By Giovanni Brees, founder of KentoHQ, Meet Oscar and CiteEngine."},
+{"@type":"Person","@id":"#giovanni","name":"Giovanni Brees","jobTitle":"Founder & Author","url":"https://giovannibrees.com","description":"Giovanni Brees is a founder and author who builds one-person companies powered by AI agents. He spent fifteen years launching products - over 4,500 launches and more than half a billion dollars raised - before building his ventures with zero employees.","knowsAbout":["AI agents","business automation","product launches","agent memory systems","solo founder operations"],"brand":["KentoHQ","Meet Oscar","CiteEngine"]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a zero-employee company?","acceptedAnswer":{"@type":"Answer","text":"A zero-employee company is a business run by a single operator where the work that used to require a team is done by systems and AI agents - no employees, no virtual assistants, no fractional hires. Capacity comes from workflows, agent orchestration and memory, not headcount."}},
+{"@type":"Question","name":"Who is Giovanni Brees?","acceptedAnswer":{"@type":"Answer","text":"Giovanni Brees is the author of The Zero-Employee Company. He spent fifteen years bringing over 4,500 products to market and helping raise more than half a billion dollars, then exited and now runs multiple businesses alone with a couple dozen AI agents."}},
+{"@type":"Question","name":"Can you really scale a business with AI agents instead of employees?","acceptedAnswer":{"@type":"Answer","text":"For a large and growing set of businesses, yes. The book argues headcount is no longer how you buy capacity - it's how you buy fragility - and shows how to design AI agents as roles, coordinate them without a manager, and keep judgment human."}}]}
+]}
+</script>
+<style>
+:root { --bg:#18120C; --bg2:#211910; --cream:#F5EEDF; --sand:#CBBDA4; --sand2:#EADFCB; --tag:#E0D2B8; --orange:#E8451C; --orange2:#F08A4C; --mut:#8A8068; --line:rgba(245,238,223,.14); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--cream); font-family:'Spectral',Georgia,serif; -webkit-font-smoothing:antialiased; }
+a { color:var(--orange); text-decoration:none; }
+a:hover { color:var(--orange2); }
+::selection { background:var(--orange); color:var(--cream); }
+.wrap { max-width:1180px; margin:0 auto; }
+.kicker { font-family:'Space Grotesk',sans-serif; font-size:13px; letter-spacing:.32em; text-transform:uppercase; color:var(--orange); margin:0 0 18px; }
+.mono { font-family:'JetBrains Mono',monospace; }
+section, header, footer { padding-left:clamp(24px,6vw,90px); padding-right:clamp(24px,6vw,90px); }
 
-  <!-- Primary SEO -->
-  <title>The Zero Employee Company — A Business Run Entirely by AI</title>
-  <meta name="description" content="Follow the build of The Zero Employee Company: a real business operated end-to-end by AI agents, with zero employees. The experiment, the tools, and the lessons — documented in public.">
-  <link rel="canonical" href="https://thezeroemployeecompany.com/">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Giovanni Brees">
+/* hero */
+.hero { position:relative; overflow:hidden; padding-top:clamp(60px,9vw,130px); padding-bottom:clamp(60px,7vw,100px); }
+.hero-glow { position:absolute; inset:0; background:radial-gradient(70% 60% at 85% 10%, rgba(232,69,28,.22) 0%, rgba(24,18,12,0) 60%); }
+.hero-zero { position:absolute; top:-40px; right:-160px; font-weight:300; font-size:clamp(400px,52vw,860px); line-height:.7; color:transparent; -webkit-text-stroke:3px rgba(232,69,28,.22); pointer-events:none; user-select:none; }
+.hero-grid { position:relative; display:grid; grid-template-columns:1fr auto; gap:clamp(30px,5vw,80px); align-items:center; }
+@media (max-width:820px){ .hero-grid { grid-template-columns:1fr; } }
+.hero h1 { margin:0; font-weight:700; font-size:clamp(52px,7.5vw,108px); line-height:.94; letter-spacing:-.015em; }
+.hero .byline { margin:0 0 22px; font-family:'Space Grotesk',sans-serif; font-size:14px; letter-spacing:.32em; text-transform:uppercase; color:var(--sand); }
+.hero .tagline { margin:30px 0 0; max-width:560px; font-style:italic; font-weight:300; font-size:clamp(22px,2.4vw,30px); line-height:1.35; color:var(--tag); }
+.hero .sub { margin:24px 0 0; max-width:600px; font-size:18px; line-height:1.65; color:var(--sand); }
+.ctas { display:flex; flex-wrap:wrap; gap:16px; margin-top:38px; align-items:center; }
+.btn { display:inline-block; background:var(--orange); color:var(--cream); font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:.04em; padding:16px 34px; border-radius:4px; }
+.btn:hover { background:#F05A30; color:#FFF; }
+.btn-ghost { display:inline-block; font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:15px; letter-spacing:.06em; padding:16px 10px; color:var(--sand); }
+.btn-ghost:hover { color:var(--cream); }
+.btn-outline { display:inline-block; border:1px solid rgba(245,238,223,.35); color:var(--cream); font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:17px; letter-spacing:.04em; padding:18px 42px; border-radius:4px; }
+.btn-outline:hover { border-color:var(--orange); color:var(--orange2); }
+.stats { display:flex; gap:34px; margin-top:44px; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.5; color:var(--mut); }
+.stats b { color:var(--orange); font-weight:400; }
 
-  <!-- Open Graph (social sharing) -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://thezeroemployeecompany.com/">
-  <meta property="og:title" content="The Zero Employee Company — A Business Run Entirely by AI">
-  <meta property="og:description" content="A real business operated end-to-end by AI agents, with zero employees. Documented in public.">
-  <meta property="og:site_name" content="The Zero Employee Company">
+/* cover mock */
+.cover { position:relative; width:clamp(220px,24vw,320px); aspect-ratio:5/8; background:var(--bg); border:1px solid rgba(245,238,223,.2); box-shadow:24px 34px 80px rgba(0,0,0,.6), inset 0 0 0 1px rgba(0,0,0,.4); overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding:9% 8%; flex-shrink:0; }
+.cover .glow { position:absolute; inset:0; background:radial-gradient(75% 55% at 80% 16%, rgba(232,69,28,.2) 0%, rgba(24,18,12,0) 60%); }
+.cover .zero { position:absolute; top:24%; right:-20%; font-weight:300; font-size:22em; line-height:.7; color:transparent; -webkit-text-stroke:2px rgba(232,69,28,.24); pointer-events:none; }
+.cover .frame { position:absolute; inset:4.5%; border:1px solid rgba(245,238,223,.16); pointer-events:none; }
+.cover .top, .cover .bot { position:relative; }
+.cover .the { font-family:'Space Grotesk',sans-serif; font-size:.7em; letter-spacing:.34em; text-transform:uppercase; color:var(--sand); margin-bottom:.6em; }
+.cover .title { font-weight:700; font-size:1.9em; line-height:.94; }
+.cover .tag { margin-top:1em; font-style:italic; font-weight:300; font-size:.85em; line-height:1.3; color:var(--tag); }
+.cover .rule { height:2px; background:linear-gradient(90deg,rgba(232,69,28,.95),rgba(232,69,28,0) 66%); margin-bottom:.8em; }
+.cover .wb { font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:.55em; letter-spacing:.34em; text-transform:uppercase; color:var(--orange); }
+.cover .name { font-weight:700; font-size:1.05em; margin-top:.3em; }
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Zero Employee Company — A Business Run Entirely by AI">
-  <meta name="twitter:description" content="A real business operated end-to-end by AI agents, with zero employees. Documented in public.">
+/* quote band */
+.band { background:var(--orange); padding-top:clamp(50px,6vw,80px); padding-bottom:clamp(50px,6vw,80px); }
+.band blockquote { margin:0 auto; max-width:1000px; font-weight:600; font-size:clamp(26px,3.4vw,44px); line-height:1.25; color:var(--bg); }
+.band .frag { font-style:italic; color:var(--cream); }
+.band footer { margin-top:22px; font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:14px; letter-spacing:.26em; text-transform:uppercase; color:#5C1A08; }
 
-  <!-- Structured data for Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "The Zero Employee Company",
-    "url": "https://thezeroemployeecompany.com/",
-    "description": "A real business operated end-to-end by AI agents, with zero employees.",
-    "publisher": {
-      "@type": "Person",
-      "name": "Giovanni Brees"
-    }
-  }
-  </script>
+/* inside grid */
+.inside { padding-top:clamp(70px,9vw,130px); padding-bottom:clamp(70px,9vw,130px); }
+.inside h2 { margin:0 0 60px; font-weight:700; font-size:clamp(32px,4vw,52px); line-height:1.1; max-width:760px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
+.card { background:var(--bg); padding:40px 34px; }
+.card .num { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--orange); margin-bottom:18px; }
+.card h3 { margin:0 0 14px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:21px; }
+.card p { margin:0; font-size:16px; line-height:1.6; color:var(--sand); }
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
-  <style>
-    :root {
-      --bg: #0b0d12;
-      --surface: #12151d;
-      --border: #232836;
-      --text: #e8eaf0;
-      --muted: #9aa3b5;
-      --accent: #5eead4;
-      --accent-dim: rgba(94, 234, 212, 0.12);
-      --max: 68rem;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+/* toc */
+.toc { padding-bottom:clamp(70px,9vw,130px); }
+.toc h2 { margin:0 0 50px; font-weight:700; font-size:clamp(28px,3.4vw,42px); line-height:1.1; }
+.toc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr)); gap:14px clamp(40px,5vw,80px); }
+.toc-row { display:flex; gap:18px; align-items:baseline; border-bottom:1px solid rgba(245,238,223,.1); padding-bottom:13px; }
+.toc-row .n { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--orange); min-width:26px; }
+.toc-row .t { font-size:17px; color:var(--sand2); }
 
-    header {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(11, 13, 18, 0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-    nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 0;
-    }
-    .logo { font-weight: 700; letter-spacing: -0.02em; color: var(--text); font-size: 1.05rem; }
-    .logo span { color: var(--accent); }
-    nav ul { display: flex; gap: 1.75rem; list-style: none; }
-    nav ul a { color: var(--muted); font-size: 0.95rem; }
-    nav ul a:hover { color: var(--text); text-decoration: none; }
+/* quotes */
+.quotes { background:var(--bg2); border-top:1px solid rgba(245,238,223,.1); border-bottom:1px solid rgba(245,238,223,.1); padding-top:clamp(70px,9vw,130px); padding-bottom:clamp(70px,9vw,130px); }
+.quotes .kicker { margin-bottom:60px; }
+.qgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(40px,5vw,70px); }
+.qgrid blockquote { margin:0; }
+.qgrid p { margin:0; font-style:italic; font-weight:300; font-size:clamp(20px,2vw,25px); line-height:1.5; color:var(--sand2); }
+.qgrid footer { margin-top:18px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--mut); }
 
-    .hero { padding: 7rem 0 6rem; text-align: center; }
-    .badge {
-      display: inline-block; padding: 0.35rem 0.9rem; border-radius: 999px;
-      background: var(--accent-dim); color: var(--accent);
-      font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem;
-      border: 1px solid rgba(94, 234, 212, 0.25);
-    }
-    h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      line-height: 1.1; letter-spacing: -0.03em; font-weight: 800;
-      max-width: 46rem; margin: 0 auto 1.25rem;
-    }
-    h1 em { font-style: normal; color: var(--accent); }
-    .hero p {
-      color: var(--muted); font-size: 1.2rem; max-width: 38rem; margin: 0 auto 2.5rem;
-    }
-    .cta {
-      display: inline-block; padding: 0.85rem 2rem; border-radius: 0.6rem;
-      background: var(--accent); color: #06281f; font-weight: 700;
-    }
-    .cta:hover { text-decoration: none; filter: brightness(1.1); }
-    .cta.ghost {
-      background: transparent; color: var(--text);
-      border: 1px solid var(--border); margin-left: 0.75rem;
-    }
+/* author */
+.author { padding-top:clamp(70px,9vw,130px); padding-bottom:clamp(70px,9vw,130px); }
+.author-grid { display:grid; grid-template-columns:auto 1fr; gap:clamp(36px,5vw,80px); align-items:center; }
+@media (max-width:720px){ .author-grid { grid-template-columns:1fr; } }
+.author img { width:clamp(180px,20vw,260px); height:clamp(180px,20vw,260px); border-radius:50%; object-fit:cover; object-position:50% 4%; border:3px solid var(--orange); }
+.author h2 { margin:0 0 22px; font-weight:700; font-size:clamp(32px,4vw,48px); line-height:1.05; }
+.author .bio { margin:0; max-width:680px; font-size:18px; line-height:1.7; color:var(--sand); }
+.author .bio strong { color:var(--cream); font-weight:600; }
+.author .motto { margin:24px 0 0; font-style:italic; font-size:18px; color:#8C8268; }
 
-    section { padding: 5rem 0; border-top: 1px solid var(--border); }
-    h2 {
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-      letter-spacing: -0.02em; margin-bottom: 1rem;
-    }
-    .lede { color: var(--muted); max-width: 42rem; margin-bottom: 3rem; font-size: 1.05rem; }
+/* faq */
+.faq { background:var(--bg2); border-top:1px solid rgba(245,238,223,.1); padding-top:clamp(70px,9vw,120px); padding-bottom:clamp(70px,9vw,120px); }
+.faq .inner { max-width:900px; margin:0 auto; }
+.faq .kicker { margin-bottom:50px; }
+.faq-list { display:flex; flex-direction:column; gap:44px; }
+.faq h3 { margin:0 0 12px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; }
+.faq p { margin:0; font-size:17px; line-height:1.7; color:var(--sand); }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; }
-    .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 0.9rem; padding: 1.75rem;
-    }
-    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .card .num {
-      color: var(--accent); font-weight: 800; font-size: 0.85rem;
-      letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.75rem;
-    }
-    .card p { color: var(--muted); font-size: 0.97rem; }
+/* buy */
+.buy { position:relative; overflow:hidden; padding-top:clamp(80px,10vw,150px); padding-bottom:clamp(80px,10vw,150px); text-align:center; }
+.buy .glow { position:absolute; inset:0; background:radial-gradient(60% 80% at 50% 110%, rgba(232,69,28,.24) 0%, rgba(24,18,12,0) 65%); }
+.buy .inner { position:relative; max-width:760px; margin:0 auto; }
+.buy h2 { margin:0; font-weight:700; font-size:clamp(36px,5vw,64px); line-height:1.05; }
+.buy p { margin:26px 0 0; font-size:19px; line-height:1.65; color:var(--sand); }
+.buy .ctas { justify-content:center; margin-top:40px; }
+.buy .btn { font-size:17px; padding:18px 42px; }
 
-    .about { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 42rem; }
-    .about p { color: var(--muted); margin-bottom: 1rem; }
-    .about strong { color: var(--text); }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 0; text-align: center; color: var(--muted); font-size: 0.9rem;
-    }
-    @media (max-width: 600px) {
-      nav ul { display: none; }
-      .hero { padding: 4.5rem 0 4rem; }
-      .cta.ghost { margin-left: 0; margin-top: 0.75rem; }
-    }
-  </style>
+/* footer */
+.site-footer { border-top:1px solid rgba(245,238,223,.12); padding-top:40px; padding-bottom:40px; display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; align-items:center; }
+.site-footer .c { font-family:'Space Grotesk',sans-serif; font-size:13px; letter-spacing:.1em; color:var(--mut); }
+.site-footer .c a { color:var(--sand); }
+.site-footer .c a:hover { color:var(--orange); }
+.site-footer nav { display:flex; gap:26px; font-family:'JetBrains Mono',monospace; font-size:12px; }
+.site-footer nav a { color:var(--mut); }
+.site-footer nav a:hover { color:var(--orange); }
+</style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <nav aria-label="Main navigation">
-      <a class="logo" href="/">The <span>Zero Employee</span> Company</a>
-      <ul>
-        <li><a href="#idea">The Idea</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-zero" aria-hidden="true">0</div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="byline">A book by <span style="color:var(--orange)">Giovanni Brees</span></p>
+      <h1>The <span style="color:var(--orange)">Zero-Employee</span> Company</h1>
+      <p class="tagline">What if scaling never meant another hire?</p>
+      <p class="sub">The operating model for one-person businesses built on AI agents - how a solo founder replaces headcount with workflows, agent orchestration and memory, and keeps the judgment that still needs a human.</p>
+      <div class="ctas">
+        <a href="#buy" class="btn">Get the book</a>
+        <a href="#inside" class="btn-ghost">What's inside &darr;</a>
+      </div>
+      <div class="stats">
+        <div><b>0</b> employees</div>
+        <div><b>28</b> AI agents</div>
+        <div><b>1</b> architect</div>
+      </div>
+    </div>
+    <div class="cover" role="img" aria-label="Book cover of The Zero-Employee Company by Giovanni Brees">
+      <div class="glow"></div>
+      <div class="zero" aria-hidden="true">0</div>
+      <div class="frame"></div>
+      <div class="top">
+        <div class="the">The</div>
+        <div class="title"><span style="color:var(--orange)">Zero-</span><br>Employee<br>Company</div>
+        <div class="tag">What if scaling never meant another hire?</div>
+      </div>
+      <div class="bot">
+        <div class="rule"></div>
+        <div class="wb">Written by</div>
+        <div class="name">Giovanni Brees</div>
+      </div>
+    </div>
   </div>
 </header>
 
-<main>
+<section class="band">
+  <blockquote>
+    &ldquo;Headcount is no longer how you buy capacity.<br><span class="frag">It&rsquo;s how you buy fragility.</span>&rdquo;
+    <footer>- Giovanni Brees, The Zero-Employee Company</footer>
+  </blockquote>
+</section>
+
+<section id="inside" class="inside">
   <div class="wrap">
-
-    <section class="hero" style="border-top:none">
-      <span class="badge">An experiment in public</span>
-      <h1>What if a company had <em>zero employees</em> — and still ran itself?</h1>
-      <p>
-        The Zero Employee Company is a real business operated end-to-end by AI agents.
-        No staff. No freelancers. Just software doing the work — and one human documenting
-        everything that happens along the way.
-      </p>
-      <a class="cta" href="#idea">Explore the experiment</a>
-      <a class="cta ghost" href="#contact">Get in touch</a>
-    </section>
-
-    <section id="idea">
-      <h2>The Idea</h2>
-      <p class="lede">
-        AI can now write, sell, support, analyze, and decide. So here's the question this
-        project exists to answer: can an entire company — product, marketing, operations,
-        customer service — run without a single employee?
-      </p>
-      <div class="grid">
-        <article class="card">
-          <span class="num">Principle 01</span>
-          <h3>Radically lean</h3>
-          <p>No payroll, no office, no meetings. Every function of the business is handled by an AI agent or an automation — or it doesn't happen.</p>
-        </article>
-        <article class="card">
-          <span class="num">Principle 02</span>
-          <h3>Built in public</h3>
-          <p>Every experiment, tool choice, cost, failure, and win gets documented here. The transparency is the point.</p>
-        </article>
-        <article class="card">
-          <span class="num">Principle 03</span>
-          <h3>Human on the loop</h3>
-          <p>One founder sets direction and reviews outcomes. The AI does the work. The interesting part is finding where that line actually sits.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="how">
-      <h2>How It Works</h2>
-      <p class="lede">
-        The company is a stack of AI agents wired together, each owning a job a
-        person would normally do.
-      </p>
-      <div class="grid">
-        <article class="card">
-          <span class="num">Ops</span>
-          <h3>Operations agents</h3>
-          <p>Handle scheduling, invoicing, reporting, and the day-to-day admin that usually eats a founder's week.</p>
-        </article>
-        <article class="card">
-          <span class="num">Growth</span>
-          <h3>Marketing agents</h3>
-          <p>Write content, run campaigns, and analyze what's working — then adjust without being asked.</p>
-        </article>
-        <article class="card">
-          <span class="num">Support</span>
-          <h3>Customer agents</h3>
-          <p>Answer questions, resolve issues, and escalate to the human only when something genuinely needs judgment.</p>
-        </article>
-        <article class="card">
-          <span class="num">Build</span>
-          <h3>Product agents</h3>
-          <p>Ship and maintain the product itself — including this website, which was built and deployed by an AI agent.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <div class="about">
-        <p>
-          <strong>The Zero Employee Company is run by Giovanni Brees</strong> — or more
-          accurately, it's run by AI, and Giovanni watches, steers, and writes about it.
-        </p>
-        <p>
-          This project isn't a prediction that jobs will disappear. It's a live experiment
-          to find out what's actually possible today, what breaks, what still needs a human,
-          and what a one-person company can realistically achieve with the current generation
-          of AI tools.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="about">
-        <p>
-          Questions, ideas, or want to follow along?
-          Reach out at <a href="mailto:giovanni@giovannibrees.com">giovanni@giovannibrees.com</a>.
-        </p>
-      </div>
-    </section>
-
+    <p class="kicker">Inside the book</p>
+    <h2>How one person runs what used to take a team</h2>
+    <div class="cards">
+      <div class="card"><div class="num">01</div><h3>AI agents as roles, not tools</h3><p>Stop collecting AI tools. Design agents the way you'd design jobs - with a scope, a standard, and a handoff - and coordinate them without a manager.</p></div>
+      <div class="card"><div class="num">02</div><h3>The delegation ladder</h3><p>What to automate, what to delegate to agents, and what to keep human - plus your first three agents and how to wire them together.</p></div>
+      <div class="card"><div class="num">03</div><h3>Why memory beats the model</h3><p>The agent memory and second-brain systems that make one operator smarter every week - the real moat behind a zero-employee company.</p></div>
+      <div class="card"><div class="num">04</div><h3>Failure modes, honestly labeled</h3><p>What breaks, what still needs you, the legal and money reality, and who this model is genuinely not for.</p></div>
+      <div class="card"><div class="num">05</div><h3>Trust but verify</h3><p>How to check agent work without becoming the bottleneck - standards, spot checks, and the handoffs that keep quality yours.</p></div>
+      <div class="card"><div class="num">06</div><h3>A multi-venture day</h3><p>What running several companies alone actually looks like, hour by hour - a case study, honestly labeled, plus the full build kit.</p></div>
+      <div class="card"><div class="num">07</div><h3>The identity layer</h3><p>How a company of one shows up like a company - voice, brand, and the second brain that keeps every agent on the same page.</p></div>
+      <div class="card"><div class="num">08</div><h3>What the leverage buys</h3><p>The payoff of zero headcount - time, margin, optionality - and an honest look at where this model goes next.</p></div>
+    </div>
   </div>
-</main>
+</section>
 
-<footer>
+<section id="chapters" class="toc">
   <div class="wrap">
-    <p>© 2026 The Zero Employee Company · Built and deployed by an AI agent.</p>
+    <p class="kicker">The full table of contents</p>
+    <h2>22 chapters, an introduction, and the Build Kit</h2>
+    <div class="toc-grid">
+      <div class="toc-row"><span class="n">00</span><span class="t">Introduction</span></div>
+      <div class="toc-row"><span class="n">01</span><span class="t">From Half a Billion Raised to Zero Employees</span></div>
+      <div class="toc-row"><span class="n">02</span><span class="t">The Hidden Cost of Headcount</span></div>
+      <div class="toc-row"><span class="n">03</span><span class="t">What Changed</span></div>
+      <div class="toc-row"><span class="n">04</span><span class="t">From Operator to Architect</span></div>
+      <div class="toc-row"><span class="n">05</span><span class="t">Agents as Roles, Not Tools</span></div>
+      <div class="toc-row"><span class="n">06</span><span class="t">The Delegation Ladder</span></div>
+      <div class="toc-row"><span class="n">07</span><span class="t">Orchestration and Handoffs</span></div>
+      <div class="toc-row"><span class="n">08</span><span class="t">Trust but Verify</span></div>
+      <div class="toc-row"><span class="n">09</span><span class="t">Your First Three Agents</span></div>
+      <div class="toc-row"><span class="n">10</span><span class="t">Wiring It Together</span></div>
+      <div class="toc-row"><span class="n">11</span><span class="t">Why Memory Beats the Model</span></div>
+      <div class="toc-row"><span class="n">12</span><span class="t">Coordinating Agents Without a Manager</span></div>
+      <div class="toc-row"><span class="n">13</span><span class="t">The Identity Layer</span></div>
+      <div class="toc-row"><span class="n">14</span><span class="t">The Second Brain</span></div>
+      <div class="toc-row"><span class="n">15</span><span class="t">A Case Study, Honestly Labeled</span></div>
+      <div class="toc-row"><span class="n">16</span><span class="t">A Multi-Venture Day</span></div>
+      <div class="toc-row"><span class="n">17</span><span class="t">What Still Needs You</span></div>
+      <div class="toc-row"><span class="n">18</span><span class="t">Failure Modes</span></div>
+      <div class="toc-row"><span class="n">19</span><span class="t">Legal, Money &amp; the Boring Reality</span></div>
+      <div class="toc-row"><span class="n">20</span><span class="t">What the Leverage Buys</span></div>
+      <div class="toc-row"><span class="n">21</span><span class="t">Is This For Everyone? No.</span></div>
+      <div class="toc-row"><span class="n">22</span><span class="t">Where This Goes (An Opinion, Labeled As One)</span></div>
+      <div class="toc-row"><span class="n">+</span><span class="t">The Build Kit</span></div>
+      <div class="toc-row"><span class="n">+</span><span class="t">The Agent Memory Landscape, a Snapshot</span></div>
+    </div>
   </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap">
+    <p class="kicker">From the book</p>
+    <div class="qgrid">
+      <blockquote><p>&ldquo;Every person you add is coordination, management, and one more thing that can quit, burn out, or have a bad quarter.&rdquo;</p><footer>Introduction</footer></blockquote>
+      <blockquote><p>&ldquo;The leverage that used to come from hiring now comes from designing systems that do the work - and from being the one person who decides what good looks like.&rdquo;</p><footer>Introduction</footer></blockquote>
+      <blockquote><p>&ldquo;This is not a book about doing everything yourself. It is about designing a company that needs less of you.&rdquo;</p><footer>Back cover</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="author" class="author">
+  <div class="wrap author-grid">
+    <img src="assets/author.png" alt="Giovanni Brees, author of The Zero-Employee Company">
+    <div>
+      <p class="kicker">About the author</p>
+      <h2>Giovanni Brees</h2>
+      <p class="bio">For fifteen years, Giovanni Brees helped founders bring products to market - more than <strong>4,500 launches</strong> and over <strong>half a billion dollars raised</strong>. Then he exited and built what came next around one rule: no employees. Today he runs several companies - <strong>KentoHQ</strong>, <strong>Meet Oscar</strong> and <strong>CiteEngine</strong> - on systems and a couple dozen AI agents he designed, wired together and watches over himself.</p>
+      <p class="motto">&ldquo;I&rsquo;d rather be early to what&rsquo;s coming than on time for what&rsquo;s leaving.&rdquo;</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="inner">
+    <p class="kicker">Questions people ask</p>
+    <div class="faq-list">
+      <div><h3>What is a zero-employee company?</h3><p>A business run by one operator where the work that used to need a team runs on systems and AI agents. No employees, no virtual assistants, no fractional hires - capacity comes from workflows, agent orchestration and memory instead of headcount.</p></div>
+      <div><h3>Can AI agents really replace employees?</h3><p>For a growing set of businesses, yes - if you treat agents as roles with scopes and standards rather than tools, verify their output, and keep judgment human. The book covers exactly where that line sits, and where it breaks.</p></div>
+      <div><h3>Who is this book for?</h3><p>Founders, solopreneurs and operators who want leverage without an org chart - and anyone deciding whether their next unit of capacity should be a hire or a system. Chapter 21 is titled &ldquo;Is This For Everyone? No.&rdquo; for a reason.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="buy" class="buy">
+  <div class="glow"></div>
+  <div class="inner">
+    <h2>Your next hire is a <span style="color:var(--orange)">system.</span></h2>
+    <p>The Zero-Employee Company - available now on Kindle and in paperback.</p>
+    <div class="ctas">
+      <a href="https://www.amazon.com/dp/B0H72KCZ6Y" class="btn">Buy on Amazon</a>
+      <a href="https://www.amazon.com/dp/B0H72KCZ6Y" class="btn-outline">Read a sample</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="c">&copy; 2026 <a href="https://giovannibrees.com">Giovanni Brees</a> - The Zero-Employee Company</div>
+  <nav>
+    <a href="https://kentohq.com">KentoHQ</a>
+    <a href="https://meetoscar.com">Meet Oscar</a>
+    <a href="https://citeengine.com">CiteEngine</a>
+  </nav>
 </footer>
 
 </body>
