@@ -22,13 +22,9 @@ Static site, zero build step: one HTML file, one author photo, one social share 
 3. Framework preset: **None**. Build command: (empty). Build output directory: `/`.
 4. Deploy. Every push to the production branch redeploys automatically.
 
-## When you add a custom domain
+## Custom domain
 
-The site currently uses `https://the-zero-employee-company.pages.dev` as its canonical URL. After adding a custom domain in the Pages project (Custom domains tab), replace that URL in:
-
-- `index.html` (canonical link, `og:url`, `og:image`)
-- `robots.txt` (Sitemap line)
-- `sitemap.xml` (loc entry)
+The canonical URL is `https://thezeroemployeecompany.com`. Add the domain in the Pages project (Custom domains tab); Cloudflare handles DNS and SSL automatically if the domain is on Cloudflare.
 
 ## After deploy
 
