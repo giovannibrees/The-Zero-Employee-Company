@@ -20,7 +20,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Book","name":"The Zero-Employee Company","alternateName":"The Zero-Employee Company: What if scaling never meant another hire?","author":{"@id":"#giovanni"},"bookFormat":"https://schema.org/EBook","inLanguage":"en","genre":["Business","Technology","Artificial Intelligence","Entrepreneurship"],"about":["AI agents","one-person business","AI automation","agent orchestration","solopreneurship","agentic workflows"],"description":"A practical operating model for building and scaling a company with zero employees: AI agents as roles, the delegation ladder, agent memory, orchestration, and the judgment work that stays human. By Giovanni Brees, founder of KentoHQ, Meet Oscar and CiteEngine."},
-{"@type":"Person","@id":"#giovanni","name":"Giovanni Brees","jobTitle":"Founder & Author","url":"https://giovannibrees.com","description":"Giovanni Brees is a founder and author who builds one-person companies powered by AI agents. He spent fifteen years launching products - over 4,500 launches and more than half a billion dollars raised - before building his ventures with zero employees.","knowsAbout":["AI agents","business automation","product launches","agent memory systems","solo founder operations"],"brand":["KentoHQ","Meet Oscar","CiteEngine"]},
+{"@type":"Person","@id":"#giovanni","name":"Giovanni Brees","jobTitle":"Founder & Author","url":"https://giovannibrees.com","email":"mailto:zeroemployeecompany@giovannibrees.com","description":"Giovanni Brees is a founder and author who builds one-person companies powered by AI agents. He spent fifteen years launching products - over 4,500 launches and more than half a billion dollars raised - before building his ventures with zero employees.","knowsAbout":["AI agents","business automation","product launches","agent memory systems","solo founder operations"],"brand":["KentoHQ","Meet Oscar","CiteEngine"]},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"What is a zero-employee company?","acceptedAnswer":{"@type":"Answer","text":"A zero-employee company is a business run by a single operator where the work that used to require a team is done by systems and AI agents - no employees, no virtual assistants, no fractional hires. Capacity comes from workflows, agent orchestration and memory, not headcount."}},
 {"@type":"Question","name":"Who is Giovanni Brees?","acceptedAnswer":{"@type":"Answer","text":"Giovanni Brees is the author of The Zero-Employee Company. He spent fifteen years bringing over 4,500 products to market and helping raise more than half a billion dollars, then exited and now runs multiple businesses alone with a couple dozen AI agents."}},
@@ -38,6 +38,7 @@ a:hover { color:var(--orange2); }
 .wrap { max-width:1180px; margin:0 auto; }
 .kicker { font-family:'Space Grotesk',sans-serif; font-size:13px; letter-spacing:.32em; text-transform:uppercase; color:var(--orange); margin:0 0 18px; }
 .mono { font-family:'JetBrains Mono',monospace; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 section, header, footer { padding-left:clamp(24px,6vw,90px); padding-right:clamp(24px,6vw,90px); }
 
 /* hero */
@@ -130,6 +131,9 @@ section, header, footer { padding-left:clamp(24px,6vw,90px); padding-right:clamp
 .buy p { margin:26px 0 0; font-size:19px; line-height:1.65; color:var(--sand); }
 .buy .ctas { justify-content:center; margin-top:40px; }
 .buy .btn { font-size:17px; padding:18px 42px; }
+.buy .contact { margin-top:34px; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--mut); }
+.buy .contact a { color:var(--sand); }
+.buy .contact a:hover { color:var(--orange); }
 
 /* footer */
 .site-footer { border-top:1px solid rgba(245,238,223,.12); padding-top:40px; padding-bottom:40px; display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; align-items:center; }
@@ -240,6 +244,7 @@ section, header, footer { padding-left:clamp(24px,6vw,90px); padding-right:clamp
 
 <section class="quotes">
   <div class="wrap">
+    <h2 class="sr-only">Quotes from the book</h2>
     <p class="kicker">From the book</p>
     <div class="qgrid">
       <blockquote><p>&ldquo;Every person you add is coordination, management, and one more thing that can quit, burn out, or have a bad quarter.&rdquo;</p><footer>Introduction</footer></blockquote>
@@ -263,6 +268,7 @@ section, header, footer { padding-left:clamp(24px,6vw,90px); padding-right:clamp
 
 <section class="faq">
   <div class="inner">
+    <h2 class="sr-only">Frequently asked questions</h2>
     <p class="kicker">Questions people ask</p>
     <div class="faq-list">
       <div><h3>What is a zero-employee company?</h3><p>A business run by one operator where the work that used to need a team runs on systems and AI agents. No employees, no virtual assistants, no fractional hires - capacity comes from workflows, agent orchestration and memory instead of headcount.</p></div>
@@ -280,6 +286,7 @@ section, header, footer { padding-left:clamp(24px,6vw,90px); padding-right:clamp
     <div class="ctas">
       <a href="https://www.amazon.com/dp/B0H72KCZ6Y" class="btn">Buy on Amazon</a>
     </div>
+    <p class="contact">Questions, press or bulk orders: <a href="mailto:zeroemployeecompany@giovannibrees.com">zeroemployeecompany@giovannibrees.com</a></p>
   </div>
 </section>
 
